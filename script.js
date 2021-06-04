@@ -9,3 +9,4 @@ color2.style.backgroundColor = 'blue';
 
 const color3 = document.getElementsByClassName('color')[3];
 color3.style.backgroundColor = 'purple';
+
