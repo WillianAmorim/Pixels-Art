@@ -54,11 +54,20 @@
        function pintarPixels(){
             let click = event.target 
             
-            let pixel = document.getElementsByClassName('pixel')
-
             let color = document.querySelector('.selected').style.backgroundColor
             console.log(color)
             
             click.style.backgroundColor = color
         }
     }
+        let button = document.getElementById('clear-board')
+        button.addEventListener('click', botao)
+
+        function botao(params) {
+            let pixel = document.getElementsByClassName('pixel')
+            
+            
+            for (let index = 0; index < pixel.length; index+=1) {
+                pixel[index].style.backgroundColor = 'white'                
+            }
+        }
