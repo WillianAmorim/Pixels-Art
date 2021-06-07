@@ -1,15 +1,47 @@
-const color0 = document.getElementsByClassName('color')[0];
-color0.style.backgroundColor = 'black';
 
-const color1 = document.getElementsByClassName('color')[1];
-color1.style.backgroundColor = 'yellow';
+    let color0 = document.getElementsByClassName('color')[0];
+    color0.style.backgroundColor = 'black';
 
-const color2 = document.getElementsByClassName('color')[2];
-color2.style.backgroundColor = 'blue';
+    let color1 = document.getElementsByClassName('color')[1];
+    color1.style.backgroundColor = 'yellow';
 
-const color3 = document.getElementsByClassName('color')[3];
-color3.style.backgroundColor = 'purple';
+    let color2 = document.getElementsByClassName('color')[2];
+    color2.style.backgroundColor = 'blue';
 
-// 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
+    let color3 = document.getElementsByClassName('color')[3];
+    color3.style.backgroundColor = 'purple';
+    
+    // 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
 
-document.getElementsByClassName("color")[0].classList.add("selected")
+    document.getElementsByTagName('div')[1].classList.add('selected')
+    
+    //Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+    /* let cores = document.getElementsByName('.color') */
+    window.onload = function() { 
+        
+        
+            color0.addEventListener('click', click)
+            color1.addEventListener('click', click)
+            color2.addEventListener('click', click)
+            color3.addEventListener('click', click)
+
+        let selectedClasse = document.querySelector('.selector')
+
+        function click(){
+            let clique = event.target
+            
+            
+            let cores = document.getElementById('color-palette').children
+           
+            for (let index = 0; index <cores.length; index++) {
+                let variasCores = cores[index];
+                
+
+                if(variasCores.classList.contains('selected')){
+                    variasCores.classList.remove('selected')
+                }                    
+            }
+            clique.classList.add('selected')
+        }
+
+    } 
