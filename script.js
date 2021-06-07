@@ -15,8 +15,8 @@
 
     document.getElementsByTagName('div')[1].classList.add('selected')
     
-    //Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
-    /* let cores = document.getElementsByName('.color') */
+    // 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+    
     window.onload = function() { 
         
         
@@ -44,4 +44,21 @@
             clique.classList.add('selected')
         }
 
-    } 
+        
+        
+        let tabelaPixel = document.getElementById('pixel-board')
+        tabelaPixel.addEventListener('click', pintarPixels)
+
+        console.log(tabelaPixel)
+
+       function pintarPixels(){
+            let click = event.target 
+            
+            let pixel = document.getElementsByClassName('pixel')
+
+            let color = document.querySelector('.selected').style.backgroundColor
+            console.log(color)
+            
+            click.style.backgroundColor = color
+        }
+    }
